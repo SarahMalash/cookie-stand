@@ -11,7 +11,7 @@ var salSeattle = {
     cookieAvg: 0,
     counter: 0,
     customer: [],
-    //total : 0,
+    total : 0,
     //avarage: function (minCustomer, maxCustomer) {
     // this.customerNum = Math.floor(Math.random() * (maxCustomer - minCustomer)) + minCustomer;
     //},
@@ -20,12 +20,22 @@ var salSeattle = {
         for (var i = 0; i < hours.length; i++) {
             this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
             this.cookieAvg = Math.floor(this.customerNum * this.avgCookie);
-            this.counter = this.counter + this.cookieAvg;
+            //this.counter = this.counter + this.cookieAvg;
             this.customer[i] = this.cookieAvg;
-            //this.total = this.total+this.cookieAvg;
+            this.total = this.total + this.customer[i];
 
         }
+        
+
     },
+//         total : function(){
+// for (i=0; i< hours.length; i++){
+// total = total + this.cookieAvg[i];
+// }
+//  console.log(this.total);
+
+//         },
+         
     render: function () {
         var container= document.getElementById('sales');
         var articleE1= document.createElement('article');
@@ -41,13 +51,14 @@ var salSeattle = {
                ulU.appendChild(liL);
              liL.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
            }
+           liL.textContent = `total = ${this.total}`;
 
         
     }
 }
 
 salSeattle.avarage2(23, 65);
-salSeattle.avarage2();
+//salSeattle.avarage2();
 salSeattle.render();
 console.log(salSeattle);
 
@@ -62,13 +73,15 @@ var salTokyo = {
     cookieAvg: 0,
     counter: 0,
     customer: [],
+    total : 0,
     avarage2: function () {
         for (var i = 0; i < hours.length; i++) {
             this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
             this.cookieAvg = Math.floor(this.customerNum * this.avgCookie);
-            this.counter = this.counter + this.cookieAvg;
+            //this.counter = this.counter + this.cookieAvg;
             this.customer[i] = this.cookieAvg;
-
+            
+            this.total = this.total + this.customer[i];
 
         }
     },
@@ -88,11 +101,11 @@ var salTokyo = {
              liL.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
            }
 
-        
+           liL.textContent = `total = ${this.total}`;
     }
 }
 salTokyo.avarage2(3, 24);
-salTokyo.avarage2();
+//salTokyo.avarage2();
 salTokyo.render();
 console.log(salTokyo);
 
@@ -109,12 +122,14 @@ var salDubai = {
     cookieAvg: 0,
     counter: 0,
     customer: [],
+    total : 0,
     avarage2: function () {
         for (var i = 0; i < hours.length; i++) {
             this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
             this.cookieAvg = Math.floor(this.customerNum * this.avgCookie);
-            this.counter = this.counter + this.cookieAvg;
+            //this.counter = this.counter + this.cookieAvg;
             this.customer[i] = this.cookieAvg;
+            this.total = this.total + this.customer[i];
 
 
         }
@@ -135,12 +150,12 @@ var salDubai = {
              liL.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
            }
 
-        
+           liL.textContent = `total = ${this.total}`;
     }
 }
 salDubai.avarage2(11, 38);
 salDubai.render();
-salDubai.avarage2();
+//salDubai.avarage2();
 console.log(salDubai);
 
 var salParis = {
@@ -152,12 +167,14 @@ var salParis = {
     cookieAvg: 0,
     counter: 0,
     customer: [],
+    total : 0,
     avarage2: function () {
         for (var i = 0; i < hours.length; i++) {
             this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
             this.cookieAvg = Math.floor(this.customerNum * this.avgCookie);
-            this.counter = this.counter + this.cookieAvg;
+            //this.counter = this.counter + this.cookieAvg;
             this.customer[i] = this.cookieAvg;
+            this.total = this.total + this.customer[i];
 
 
         }
@@ -177,14 +194,14 @@ var salParis = {
                ulU.appendChild(liL);
              liL.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
            }
-
+           liL.textContent = `total = ${this.total}`;
         
     }
     
 }
 salParis.avarage2(20, 38);
 salParis.render();
-salParis.avarage2();
+//salParis.avarage2();
 console.log(salParis);
 
 var salLima = {
@@ -196,12 +213,14 @@ var salLima = {
     cookieAvg: 0,
     counter: 0,
     customer: [],
+    total : 0,
     avarage2: function () {
         for (var i = 0; i < hours.length; i++) {
             this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
             this.cookieAvg = Math.floor(this.customerNum * this.avgCookie);
-            this.counter = this.counter + this.cookieAvg;
+            //this.counter = this.counter + this.cookieAvg;
             this.customer[i] = this.cookieAvg;
+            this.total = this.total + this.customer[i];
         }
         },
 
@@ -221,12 +240,12 @@ var salLima = {
                  liL.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
                }
     
-            
+               liL.textContent = `total = ${this.total}`;
         }
     }
 
 
 salLima.avarage2(2, 16);
 salLima.render()
-salLima.avarage2();
+//salLima.avarage2();
 console.log(salLima);
