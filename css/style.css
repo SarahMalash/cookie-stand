@@ -1,0 +1,21 @@
+table {
+    
+    border: 2px solid burlywood;
+    background-color: cornflowerblue;
+
+}
+td,tr{
+    border: 2px solid burlywood;
+
+    
+}
+table, td, tr{
+    
+    margin: 0 auto;
+}
+#sal{
+    margin-bottom: 10%;
+}
+body{
+    background-color: burlywood;
+}
