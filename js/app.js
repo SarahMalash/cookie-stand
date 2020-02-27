@@ -119,11 +119,11 @@ myForm.addEventListener('submit', function(event) {
   console.log(event.target);
   var location= event.target.location.value;
   console.log(location);
-var minCustomer = event.target.minCustomer.value;
+var minCustomer =parseInt( event.target.minCustomer.value);
 console.log(minCustomer);
-var maxCustomer = event.target.maxCustomer.value;
+var maxCustomer = parseInt (event.target.maxCustomer.value);
 console.log(maxCustomer);
-var cookieAvg = event.target.cookieAvg.value;
+var cookieAvg = parseFloat (event.target.cookieAvg.value);
 console.log(cookieAvg);
 // var customer = event.target.customer.value.split(',');
 // console.log(customer);
@@ -146,9 +146,9 @@ console.log(cookieAvg);
     var newCell = new Salmon (location,minCustomer,maxCustomer,cookieAvg);
     newCell.avarage2();
     //catObj.render();
-    //newCell.render2();
+   
     newCell.render1();
-
+ newCell.render2();
  }
  
 })
