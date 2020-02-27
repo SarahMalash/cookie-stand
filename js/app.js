@@ -1,4 +1,4 @@
-`user strict`
+'user strict'
 
 
 var hours = ['6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM'];
@@ -24,6 +24,8 @@ function Salmon(location, minCustomer, maxCustomer, avgCookie) {
     array.push(this);
     //objArray.push(this);
 }
+
+
 Salmon.prototype.avarage2 = function () {
 
     for (var i = 0; i < hours.length; i++) {
@@ -110,6 +112,46 @@ Salmon.prototype.render2 = function () {
 
 }
 }
+var myForm = document.getElementById('Salmon');
+myForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+  console.log(event);
+  console.log(event.target);
+  var location= event.target.location.value;
+  console.log(location);
+var minCustomer = event.target.minCustomer.value;
+console.log(minCustomer);
+var maxCustomer = event.target.maxCustomer.value;
+console.log(maxCustomer);
+var cookieAvg = event.target.cookieAvg.value;
+console.log(cookieAvg);
+// var customer = event.target.customer.value.split(',');
+// console.log(customer);
+
+ if (maxCustomer > minCustomer){
+//     var tr1 = document.createElement('tr');
+//     tab1.appendChild(tr1);
+//  //    var td3 = document.createElement ('td');
+//  //    tr1.appendChild(td3);
+//     var td2 = document.createElement('td');
+//     tr1.appendChild(td2);
+//     td2.textContent = this.location;
+    
+// var td1 = document.createElement('td');
+//     tr1.appendChild(td1);
+//     td1.textContent = `${this.customer}`;
+//     var td3 = document.createElement('td');
+//     tr1.appendChild(td3);
+//     td3.textContent = this.total;
+    var newCell = new Salmon (location,minCustomer,maxCustomer,cookieAvg);
+    newCell.avarage2();
+    //catObj.render();
+    //newCell.render2();
+    newCell.render1();
+
+ }
+ 
+})
 
 
 
@@ -177,316 +219,316 @@ obj1.render2();
    
 
 
-// var hours = ['6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM'];
+// // var hours = ['6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM'];
 
-// var salSeattle = {
-//     location: 'Seattle',
-//     customerNum: 0,
-//     minCustomer: 23,
-//     maxCustomer: 65,
-//     avgCookie: 6.3,
-//     cookieAvg: 0,
-//     counter: 0,
-//     customer: [],
-//     total : 0,
-//     //avarage: function (minCustomer, maxCustomer) {
-//     // this.customerNum = Math.floor(Math.random() * (maxCustomer - minCustomer)) + minCustomer;
-//     //},
+// // var salSeattle = {
+// //     location: 'Seattle',
+// //     customerNum: 0,
+// //     minCustomer: 23,
+// //     maxCustomer: 65,
+// //     avgCookie: 6.3,
+// //     cookieAvg: 0,
+// //     counter: 0,
+// //     customer: [],
+// //     total : 0,
+// //     //avarage: function (minCustomer, maxCustomer) {
+// //     // this.customerNum = Math.floor(Math.random() * (maxCustomer - minCustomer)) + minCustomer;
+// //     //},
 
-//     avarage2: function () {
-//         for (var i = 0; i < hours.length; i++) {
-//             this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
-//             this.cookieAvg = Math.floor(this.customerNum * this.avgCookie);
-//             //this.counter = this.counter + this.cookieAvg;
-//             this.customer[i] = this.cookieAvg;
-//             this.total = this.total + this.customer[i];
+// //     avarage2: function () {
+// //         for (var i = 0; i < hours.length; i++) {
+// //             this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
+// //             this.cookieAvg = Math.floor(this.customerNum * this.avgCookie);
+// //             //this.counter = this.counter + this.cookieAvg;
+// //             this.customer[i] = this.cookieAvg;
+// //             this.total = this.total + this.customer[i];
 
-//         }
+// //         }
 
 
-//     },
-// //         total : function(){
-// // for (i=0; i< hours.length; i++){
-// // total = total + this.cookieAvg[i];
+// //     },
+// // //         total : function(){
+// // // for (i=0; i< hours.length; i++){
+// // // total = total + this.cookieAvg[i];
+// // // }
+// // //  console.log(this.total);
+
+// // //         },
+
+// //     render: function () {
+// //         var container= document.getElementById('sales');
+// //         var articleE1= document.createElement('article');
+// //     container.appendChild(articleE1);
+// //         var h2H = document.createElement('h2');
+// //             articleE1.appendChild(h2H);
+// //             h2H.textContent = this.location;
+
+// //            var ulU = document.createElement('ul');
+// //            articleE1.appendChild(ulU);
+// //            for(var i =0; i<hours.length; i++) {
+// //                var liL = document.createElement('li');
+// //                ulU.appendChild(liL);
+// //              liL.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
+// //            }
+// //            liL.textContent = `total = ${this.total}`;
+
+
+// //     }
 // // }
-// //  console.log(this.total);
 
+// // salSeattle.avarage2(23, 65);
+// // //salSeattle.avarage2();
+// // salSeattle.render();
+// // console.log(salSeattle);
+
+
+
+// // var salTokyo = {
+// //     location: 'Tokyo',
+// //     customerNum: 0,
+// //     minCustomer: 3,
+// //     maxCustomer: 24,
+// //     avgCookie: 1.2,
+// //     cookieAvg: 0,
+// //     counter: 0,
+// //     customer: [],
+// //     total : 0,
+// //     avarage2: function () {
+// //         for (var i = 0; i < hours.length; i++) {
+// //             this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
+// //             this.cookieAvg = Math.floor(this.customerNum * this.avgCookie);
+// //             //this.counter = this.counter + this.cookieAvg;
+// //             this.customer[i] = this.cookieAvg;
+
+// //             this.total = this.total + this.customer[i];
+
+// //         }
+// //     },
+// //     render: function () {
+// //         var container= document.getElementById('sales');
+// //         var articleE1= document.createElement('article');
+// //     container.appendChild(articleE1);
+// //         var h2H = document.createElement('h2');
+// //             articleE1.appendChild(h2H);
+// //             h2H.textContent = this.location;
+
+// //            var ulU = document.createElement('ul');
+// //            articleE1.appendChild(ulU);
+// //            for(var i =0; i<hours.length; i++) {
+// //                var liL = document.createElement('li');
+// //                ulU.appendChild(liL);
+// //              liL.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
+// //            }
+
+// //            liL.textContent = `total = ${this.total}`;
+// //     }
+// // }
+// // salTokyo.avarage2(3, 24);
+// // //salTokyo.avarage2();
+// // salTokyo.render();
+// // console.log(salTokyo);
+
+
+
+
+
+// // var salDubai = {
+// //     location: 'Dubai',
+// //     customerNum: 0,
+// //     minCustomer: 11,
+// //     maxCustomer: 38,
+// //     avgCookie: 3.7,
+// //     cookieAvg: 0,
+// //     counter: 0,
+// //     customer: [],
+// //     total : 0,
+// //     avarage2: function () {
+// //         for (var i = 0; i < hours.length; i++) {
+// //             this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
+// //             this.cookieAvg = Math.floor(this.customerNum * this.avgCookie);
+// //             //this.counter = this.counter + this.cookieAvg;
+// //             this.customer[i] = this.cookieAvg;
+// //             this.total = this.total + this.customer[i];
+
+
+// //         }
+// //     },
+// //     render: function () {
+// //         var container= document.getElementById('sales');
+// //         var articleE1= document.createElement('article');
+// //     container.appendChild(articleE1);
+// //         var h2H = document.createElement('h2');
+// //             articleE1.appendChild(h2H);
+// //             h2H.textContent = this.location;
+
+// //            var ulU = document.createElement('ul');
+// //            articleE1.appendChild(ulU);
+// //            for(var i =0; i<hours.length; i++) {
+// //                var liL = document.createElement('li');
+// //                ulU.appendChild(liL);
+// //              liL.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
+// //            }
+
+// //            liL.textContent = `total = ${this.total}`;
+// //     }
+// // }
+// // salDubai.avarage2(11, 38);
+// // salDubai.render();
+// // //salDubai.avarage2();
+// // console.log(salDubai);
+
+// // var salParis = {
+// //     location: 'Paris',
+// //     customerNum: 0,
+// //     minCustomer: 20,
+// //     maxCustomer: 38,
+// //     avgCookie: 2.3,
+// //     cookieAvg: 0,
+// //     counter: 0,
+// //     customer: [],
+// //     total : 0,
+// //     avarage2: function () {
+// //         for (var i = 0; i < hours.length; i++) {
+// //             this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
+// //             this.cookieAvg = Math.floor(this.customerNum * this.avgCookie);
+// //             //this.counter = this.counter + this.cookieAvg;
+// //             this.customer[i] = this.cookieAvg;
+// //             this.total = this.total + this.customer[i];
+
+
+// //         }
+// //     },
+// //     render: function () {
+// //         var container= document.getElementById('sales');
+// //         var articleE1= document.createElement('article');
+// //     container.appendChild(articleE1);
+// //         var h2H = document.createElement('h2');
+// //             articleE1.appendChild(h2H);
+// //             h2H.textContent = this.location;
+
+// //            var ulU = document.createElement('ul');
+// //            articleE1.appendChild(ulU);
+// //            for(var i =0; i<hours.length; i++) {
+// //                var liL = document.createElement('li');
+// //                ulU.appendChild(liL);
+// //              liL.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
+// //            }
+// //            liL.textContent = `total = ${this.total}`;
+
+// //     }
+
+// // }
+// // salParis.avarage2(20, 38);
+// // salParis.render();
+// // //salParis.avarage2();
+// // console.log(salParis);
+
+// // var salLima = {
+// //     location: 'Lima',
+// //     customerNum: 0,
+// //     minCustomer: 2,
+// //     maxCustomer: 16,
+// //     avgCookie: 4.6,
+// //     cookieAvg: 0,
+// //     counter: 0,
+// //     customer: [],
+// //     total : 0,
+// //     avarage2: function () {
+// //         for (var i = 0; i < hours.length; i++) {
+// //             this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
+// //             this.cookieAvg = Math.floor(this.customerNum * this.avgCookie);
+// //             //this.counter = this.counter + this.cookieAvg;
+// //             this.customer[i] = this.cookieAvg;
+// //             this.total = this.total + this.customer[i];
+// //         }
 // //         },
 
-//     render: function () {
-//         var container= document.getElementById('sales');
-//         var articleE1= document.createElement('article');
-//     container.appendChild(articleE1);
-//         var h2H = document.createElement('h2');
-//             articleE1.appendChild(h2H);
-//             h2H.textContent = this.location;
+// //         render: function () {
+// //             var container= document.getElementById('sales');
+// //             var articleE1= document.createElement('article');
+// //         container.appendChild(articleE1);
+// //             var h2H = document.createElement('h2');
+// //                 articleE1.appendChild(h2H);
+// //                 h2H.textContent = this.location;
 
-//            var ulU = document.createElement('ul');
-//            articleE1.appendChild(ulU);
-//            for(var i =0; i<hours.length; i++) {
-//                var liL = document.createElement('li');
-//                ulU.appendChild(liL);
-//              liL.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
-//            }
-//            liL.textContent = `total = ${this.total}`;
+// //                var ulU = document.createElement('ul');
+// //                articleE1.appendChild(ulU);
+// //                for(var i =0; i<hours.length; i++) {
+// //                    var liL = document.createElement('li');
+// //                    ulU.appendChild(liL);
+// //                  liL.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
+// //                }
 
-
-//     }
-// }
-
-// salSeattle.avarage2(23, 65);
-// //salSeattle.avarage2();
-// salSeattle.render();
-// console.log(salSeattle);
+// //                liL.textContent = `total = ${this.total}`;
+// //         }
+// //     }
 
 
+// // salLima.avarage2(2, 16);
+// // salLima.render()
+// // //salLima.avarage2();
+// // console.log(salLima);
 
-// var salTokyo = {
-//     location: 'Tokyo',
-//     customerNum: 0,
-//     minCustomer: 3,
-//     maxCustomer: 24,
-//     avgCookie: 1.2,
-//     cookieAvg: 0,
-//     counter: 0,
-//     customer: [],
-//     total : 0,
-//     avarage2: function () {
-//         for (var i = 0; i < hours.length; i++) {
-//             this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
-//             this.cookieAvg = Math.floor(this.customerNum * this.avgCookie);
-//             //this.counter = this.counter + this.cookieAvg;
-//             this.customer[i] = this.cookieAvg;
+// // //////////////
 
-//             this.total = this.total + this.customer[i];
+// // var hours = ['6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM'];
+// // var array = [];
+// // function Salmon(location, minCustomer, maxCustomer, avgCookie) {
+// //     this.location = location,
+// //         this.customerNum = 0;
+// //     this.minCustomer = minCustomer;
+// //     this.maxCustomer = maxCustomer;
+// //     this.avgCookie = avgCookie;
+// //     this.cookieAvg = 0;
+// //     this.customer = [];
+// //     this.total = 0;
+// //     objArray=[];
+// //     array.push(this);
+// //     objArray.push(this);
+// // }
+// // Salmon.prototype.avarage2 = function () {
 
-//         }
-//     },
-//     render: function () {
-//         var container= document.getElementById('sales');
-//         var articleE1= document.createElement('article');
-//     container.appendChild(articleE1);
-//         var h2H = document.createElement('h2');
-//             articleE1.appendChild(h2H);
-//             h2H.textContent = this.location;
+// //     for (var i = 0; i < hours.length; i++) {
+// //         this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
+// //         this.cookieAvg = Math.floor(this.customerNum * this.avgCookie);
+// //         //this.counter = this.counter + this.cookieAvg;
+// //         this.customer[i] = this.cookieAvg;
+// //         this.total = this.total + this.customer[i];
 
-//            var ulU = document.createElement('ul');
-//            articleE1.appendChild(ulU);
-//            for(var i =0; i<hours.length; i++) {
-//                var liL = document.createElement('li');
-//                ulU.appendChild(liL);
-//              liL.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
-//            }
-
-//            liL.textContent = `total = ${this.total}`;
-//     }
-// }
-// salTokyo.avarage2(3, 24);
-// //salTokyo.avarage2();
-// salTokyo.render();
-// console.log(salTokyo);
-
-
-
-
-
-// var salDubai = {
-//     location: 'Dubai',
-//     customerNum: 0,
-//     minCustomer: 11,
-//     maxCustomer: 38,
-//     avgCookie: 3.7,
-//     cookieAvg: 0,
-//     counter: 0,
-//     customer: [],
-//     total : 0,
-//     avarage2: function () {
-//         for (var i = 0; i < hours.length; i++) {
-//             this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
-//             this.cookieAvg = Math.floor(this.customerNum * this.avgCookie);
-//             //this.counter = this.counter + this.cookieAvg;
-//             this.customer[i] = this.cookieAvg;
-//             this.total = this.total + this.customer[i];
-
-
-//         }
-//     },
-//     render: function () {
-//         var container= document.getElementById('sales');
-//         var articleE1= document.createElement('article');
-//     container.appendChild(articleE1);
-//         var h2H = document.createElement('h2');
-//             articleE1.appendChild(h2H);
-//             h2H.textContent = this.location;
-
-//            var ulU = document.createElement('ul');
-//            articleE1.appendChild(ulU);
-//            for(var i =0; i<hours.length; i++) {
-//                var liL = document.createElement('li');
-//                ulU.appendChild(liL);
-//              liL.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
-//            }
-
-//            liL.textContent = `total = ${this.total}`;
-//     }
-// }
-// salDubai.avarage2(11, 38);
-// salDubai.render();
-// //salDubai.avarage2();
-// console.log(salDubai);
-
-// var salParis = {
-//     location: 'Paris',
-//     customerNum: 0,
-//     minCustomer: 20,
-//     maxCustomer: 38,
-//     avgCookie: 2.3,
-//     cookieAvg: 0,
-//     counter: 0,
-//     customer: [],
-//     total : 0,
-//     avarage2: function () {
-//         for (var i = 0; i < hours.length; i++) {
-//             this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
-//             this.cookieAvg = Math.floor(this.customerNum * this.avgCookie);
-//             //this.counter = this.counter + this.cookieAvg;
-//             this.customer[i] = this.cookieAvg;
-//             this.total = this.total + this.customer[i];
-
-
-//         }
-//     },
-//     render: function () {
-//         var container= document.getElementById('sales');
-//         var articleE1= document.createElement('article');
-//     container.appendChild(articleE1);
-//         var h2H = document.createElement('h2');
-//             articleE1.appendChild(h2H);
-//             h2H.textContent = this.location;
-
-//            var ulU = document.createElement('ul');
-//            articleE1.appendChild(ulU);
-//            for(var i =0; i<hours.length; i++) {
-//                var liL = document.createElement('li');
-//                ulU.appendChild(liL);
-//              liL.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
-//            }
-//            liL.textContent = `total = ${this.total}`;
-
-//     }
-
-// }
-// salParis.avarage2(20, 38);
-// salParis.render();
-// //salParis.avarage2();
-// console.log(salParis);
-
-// var salLima = {
-//     location: 'Lima',
-//     customerNum: 0,
-//     minCustomer: 2,
-//     maxCustomer: 16,
-//     avgCookie: 4.6,
-//     cookieAvg: 0,
-//     counter: 0,
-//     customer: [],
-//     total : 0,
-//     avarage2: function () {
-//         for (var i = 0; i < hours.length; i++) {
-//             this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
-//             this.cookieAvg = Math.floor(this.customerNum * this.avgCookie);
-//             //this.counter = this.counter + this.cookieAvg;
-//             this.customer[i] = this.cookieAvg;
-//             this.total = this.total + this.customer[i];
-//         }
-//         },
-
-//         render: function () {
-//             var container= document.getElementById('sales');
-//             var articleE1= document.createElement('article');
-//         container.appendChild(articleE1);
-//             var h2H = document.createElement('h2');
-//                 articleE1.appendChild(h2H);
-//                 h2H.textContent = this.location;
-
-//                var ulU = document.createElement('ul');
-//                articleE1.appendChild(ulU);
-//                for(var i =0; i<hours.length; i++) {
-//                    var liL = document.createElement('li');
-//                    ulU.appendChild(liL);
-//                  liL.textContent = `${hours[i]}: ${this.customer[i]} cookies`;
-//                }
-
-//                liL.textContent = `total = ${this.total}`;
-//         }
-//     }
-
-
-// salLima.avarage2(2, 16);
-// salLima.render()
-// //salLima.avarage2();
-// console.log(salLima);
-
-// //////////////
-
-// var hours = ['6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM'];
-// var array = [];
-// function Salmon(location, minCustomer, maxCustomer, avgCookie) {
-//     this.location = location,
-//         this.customerNum = 0;
-//     this.minCustomer = minCustomer;
-//     this.maxCustomer = maxCustomer;
-//     this.avgCookie = avgCookie;
-//     this.cookieAvg = 0;
-//     this.customer = [];
-//     this.total = 0;
-//     objArray=[];
-//     array.push(this);
-//     objArray.push(this);
-// }
-// Salmon.prototype.avarage2 = function () {
-
-//     for (var i = 0; i < hours.length; i++) {
-//         this.customerNum = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
-//         this.cookieAvg = Math.floor(this.customerNum * this.avgCookie);
-//         //this.counter = this.counter + this.cookieAvg;
-//         this.customer[i] = this.cookieAvg;
-//         this.total = this.total + this.customer[i];
-
-//     }
-
-// }
-
-
-
-// //var location1 = ['Seatel', 'Tokyo', 'Dubai', 'Paris', 'Lima',];
-// //Salmon.prototype.Location1 = function (){
-// //for (j =0; j < location1.length; j++){
-
-
-// // var obj1 = new Salmon('Seatel', 23, 65, 6.3);
-// // console.log(this.obj1);
-// // obj1.avarage2();
-// // var obj2 = new Salmon('Tokyo', 3, 24, 1.2);
-// // console.log(this.obj1);
-// // obj2.avarage2();
-// // var obj3 = new Salmon('Dubai', 11, 38, 3.7);
-// // console.log(this.obj3);
-// // obj3.avarage2();
-// // var obj4 = new Salmon('Paris', 20, 38, 2.3);
-// // console.log(this.obj4);
-// // obj4.avarage2();
-// // var obj5 = new Salmon('Lima', 2, 16, 4.6);
-// // console.log(this.obj5);
-// // obj5.avarage2();
-
-// // Salmon.prototype.objArrayLoop = function () {
-// // for (i=0; i < objArray.length; i++){
-// // objArray[i].avarage2;
-// // console.log(objArray[i]);
+// //     }
 
 // // }
-// // }
 
-// //new Salmon('seattle',3.4,2.6,5.3)
-// // new Salmon('tokyo')
+
+
+// // //var location1 = ['Seatel', 'Tokyo', 'Dubai', 'Paris', 'Lima',];
+// // //Salmon.prototype.Location1 = function (){
+// // //for (j =0; j < location1.length; j++){
+
+
+// // // var obj1 = new Salmon('Seatel', 23, 65, 6.3);
+// // // console.log(this.obj1);
+// // // obj1.avarage2();
+// // // var obj2 = new Salmon('Tokyo', 3, 24, 1.2);
+// // // console.log(this.obj1);
+// // // obj2.avarage2();
+// // // var obj3 = new Salmon('Dubai', 11, 38, 3.7);
+// // // console.log(this.obj3);
+// // // obj3.avarage2();
+// // // var obj4 = new Salmon('Paris', 20, 38, 2.3);
+// // // console.log(this.obj4);
+// // // obj4.avarage2();
+// // // var obj5 = new Salmon('Lima', 2, 16, 4.6);
+// // // console.log(this.obj5);
+// // // obj5.avarage2();
+
+// // // Salmon.prototype.objArrayLoop = function () {
+// // // for (i=0; i < objArray.length; i++){
+// // // objArray[i].avarage2;
+// // // console.log(objArray[i]);
+
+// // // }
+// // // }
+
+// // //new Salmon('seattle',3.4,2.6,5.3)
+// // // new Salmon('tokyo')
